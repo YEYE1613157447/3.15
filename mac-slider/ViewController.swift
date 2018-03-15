@@ -25,12 +25,22 @@ class ViewController: UIViewController {
 //        slider.thumbTintColor = UIColor.black
 //        slider.addTarget(self, action: #selector(change(slider:)), for: .valueChanged)
 //        self.view.addSubview(slider)
-        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+//        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+//        
+//        indicator.center = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height/2)
+//        indicator.color = UIColor.black
+//        self.view.addSubview(indicator)
+//        indicator.startAnimating()
         
-        indicator.center = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height/2)
-        indicator.color = UIColor.black
-        self.view.addSubview(indicator)
-        indicator.startAnimating()
+        let progressView = UIProgressView(progressViewStyle: .default)
+        progressView.frame = CGRect(x: 100, y: 100, width: 200, height: 30)
+        progressView.progressTintColor = UIColor.red
+        progressView.trackTintColor = UIColor.blue
+        progressView.progress = 0.6
+        self.view.addSubview(progressView)
+        
+        
+        
         
     }
     
