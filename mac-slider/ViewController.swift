@@ -39,9 +39,25 @@ class ViewController: UIViewController {
         progressView.progress = 0.6
         self.view.addSubview(progressView)
         
+        let step = UIStepper()
+        step.frame = CGRect(x: 200, y: 500, width: 200, height: 30)
+        step.maximumValue = 10
+        step.minimumValue = 0
+        step.autorepeat = true
+        step.isContinuous = true
+        step.stepValue = 2
+        step.tintColor = UIColor.blue
         
+        step.addTarget(self, action: #selector(changevlue(step:)), for: .valueChanged)
         
+        self.view.addSubview(step)
+    
         
+    }
+    
+    func changevlue(step:UIStepper)
+    {
+        print(step.value)
     }
     
     func change(slider:UISlider){
